@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import json
 import pandas as pd
 from pandas import DataFrame
@@ -63,6 +64,7 @@ def get_recommendations(title, cosine_sim=cosine_sim):
 print(get_recommendations('Leaving Las Vegas'))
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/")
 def hello_world(): 
