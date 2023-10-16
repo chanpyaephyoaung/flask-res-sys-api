@@ -64,6 +64,9 @@ print(get_recommendations('Leaving Las Vegas'))
 
 app = Flask(__name__)
 
+@app.route("/")
+def hello_world(): 
+   return 'Hello World!'
 
 @app.route("/get-rec/<movie>")
 def get_rec(movie):
